@@ -155,13 +155,14 @@ nav a:focus{
 /* Step 5: Write selector/rule property to add the background image to the
 first div in the grid  and place it in the grid. */
 
-div.container:first-child{
+.container > div:first-child{
   background-image: url("../images/header.jpg");
   grid-column: 1 / -1;
-}
-.overview{
-  grid-column: 2 / span 1;
-  grid-row: 1;
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  height: 400px;                /* Parallax effect */
 }
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
  four rows in the grid. */
@@ -222,10 +223,10 @@ div.container:first-child{
  /* Step 8: Write the selector/rule property to style the .text-block class. */
 .text-block{
   display: flex;
-  height: relative;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  align-content: center;
 }
 
 
@@ -243,7 +244,7 @@ div.container:first-child{
   /* Step 10: Write the selector/rule property to update the .container class */
   .container{
     display: grid;
-    grid-template-columns: 50px auto 500px auto  50px;
+    grid-template-columns: 50px auto 500px auto 50px;
     column-gap: 15px;
     row-gap: 15px;
   }
@@ -298,6 +299,5 @@ div.container:first-child{
  /* Step 13:Write the selector/rule property to update the .text-block class */
  .text-block{
   max-height: 250px;
-  
  }
 }
